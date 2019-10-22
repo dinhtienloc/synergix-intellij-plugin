@@ -48,7 +48,7 @@ public class SynergixScreensPanel extends SimpleToolWindowPanel implements DataP
 	private void buildTree() {
 		SynergixScreensBuilder treeBuilder = new SynergixScreensBuilder(this.myProject);
 		SynergixScreensStructure myScreenStructure = treeBuilder.getMyTreeStructure();
-		final StructureTreeModel treeModel = new StructureTreeModel<>(myScreenStructure);
+		final StructureTreeModel treeModel = new StructureTreeModel<>(myScreenStructure, this);
 		this.myTree = new Tree(new AsyncTreeModel(treeModel, this));
 
 		this.myTree.setRootVisible(true);
